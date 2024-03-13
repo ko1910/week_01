@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int a[n];
+    float countnegative = 0;
+    float countpositive = 0;
+    float countzero = 0;
+    for (int i=0; i<n; i++)
+    {
+        cin >> a[i];
+        if (a[i] > 0) {
+            countpositive ++;
+        }
+        if (a[i] < 0) {
+            countnegative ++;
+        }
+        if (a[i] == 0) {
+            countzero ++;
+        }
+    }
+    float sum = countpositive + countnegative + countzero;
+    float percentpositive = countpositive/sum;
+    float percentnegative = countnegative/sum;
+    float percentzero = countzero/sum;
+    cout << fixed << setprecision(6) << percentpositive <<'\n';
+    cout << fixed << setprecision(6) << percentnegative <<'\n';
+    cout << fixed << setprecision(6) << percentzero;
+}
