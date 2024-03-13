@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+#include <iomanip>
+bool checkFunctions(int n, int a[])
+{   
+        int sum = 0;
+                for (int i=0; i<n; i++)
+                {
+                    sum += a[i];
+                }
+                for (int i=0; i<n; i++)
+                {   int sumi1 = 0;
+                    int sumi2 = 0;
+                    for (int j=0; j<i; j++)
+                    {
+                        sumi1 +=a[j];
+                    }
+                    for (int j=i+1; j<n; j++)
+                    {
+                        sumi2 += a[j];
+                    }
+                    if (sumi1==sumi2)  {
+                        return 1;
+                    }
+                } 
+                return 0;
+}
+using namespace std;
+int main()
+{  
+    int T;
+    cin >> T;
+    for (int i=0; i<T; i++)
+    {
+        int n;
+        cin >> n;
+        int a[n];
+        for (int i=0; i<n; i++)
+        {
+            cin >> a[i];
+        }
+        if (checkFunctions(n, a))  { cout << "YES" << endl;}
+        else { cout << "NO" << endl;}
+    }
+}
